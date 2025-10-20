@@ -1,0 +1,11 @@
+{
+  "name": "ci-cd-practice",
+  "version": "1.0.0",
+  "scripts": {
+    "test": "mocha",
+    "build": "echo 'Build step simulated'"
+  },
+  "devDependencies": {
+    "mocha": "^10.0.0"
+  }
+}
