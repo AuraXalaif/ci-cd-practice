@@ -23,6 +23,10 @@ jobs:
             node_modules
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: npm-${{ runner.os }}-
+
+      - name: Install dependencies
+        run: npm install
+
       - run: npm ci
       - run: npm test -- --reporter=junit --reporter-options "mochaFile=report.xml" || true
       - uses: actions/upload-artifact@v4
@@ -47,9 +51,6 @@ jobs:
             node_modules
           key: npm-${{ runner.os }}-${{ hashFiles('**/package-lock.json') }}
           restore-keys: npm-${{ runner.os }}-
-
-      - name: Install dependencies
-        run: npm install
 
       - run: npm ci
       - run: npm run build
